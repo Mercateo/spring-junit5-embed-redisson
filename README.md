@@ -40,3 +40,7 @@ to your pom.xml and create a SpringBoot Redisson Test like this:
 ``` 
 
 
+The Extionsion will start a Spring Boot container and for every test that
+has a parameter of type ```RedissonClient```, an embedded Redis Server is
+started and stoped on a random port, and the client passed to the test is
+connected to it.
