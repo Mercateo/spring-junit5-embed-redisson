@@ -7,36 +7,36 @@ In order to create a Spring Boot Test, you need to use JUnit5.
 
 First add 
 ```
-	<dependency>
-		<groupId>com.mercateo.oss</groupId>
-		<artifactId>spring-junit5-embed-redisson</artifactId>
-		<version>[0,)</version> <!-- or a particular version -->
-		<scope>test</scope>
-	</dependency>
+<dependency>
+	<groupId>com.mercateo.oss</groupId>
+	<artifactId>spring-junit5-embed-redisson</artifactId>
+	<version>[0,)</version> <!-- or a particular version -->
+	<scope>test</scope>
+</dependency>
 ``` 
 		
 to your pom.xml and create a SpringBootRedissonTest like this:
 
 ```
-	// look ma, no RunWith
-	@SpringBootRedissonTest // provides the extensions
-	public class RedissonTest {
+// look ma, no RunWith
+@SpringBootRedissonTest // provides the extensions
+public class RedissonTest {
+
+	@Test
+	public void testWithInjectedRedissonParameter(RedissonClient c) {
+		RDeque<Object> deque = c.getDeque("mylist");
+		assertEquals(0, deque.size());
 	
-		@Test
-		public void testWithInjectedRedissonParameter(RedissonClient c) {
-
-			RDeque<Object> deque = c.getDeque("mylist");
-			assertEquals(0, deque.size());
-		
-			deque.add("hubba");
-			assertEquals("hubba", deque.pop());
-		}
-
-		@Test
-		public void testWithoutRedissonParameter() {
-			// there is no redis server being started for this test, as there is no redisson parameter
-		}
+		deque.add("hubba");
+		assertEquals("hubba", deque.pop());
 	}
+	
+	@Test
+	public void testWithoutRedissonParameter() {
+		// there is no redis server being started for this test, 
+		// as there is no redisson parameter
+	}
+}
 
 ``` 
 
