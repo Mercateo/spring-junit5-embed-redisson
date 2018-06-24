@@ -21,6 +21,10 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<scm>
+		<developerConnection>scm:git:git@github.com:uweschaefer/spring-junit5-embed-redisson.git</developerConnection>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
