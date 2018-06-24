@@ -10,7 +10,7 @@
 
 
 	<artifactId>spring-junit5-embed-redisson</artifactId>
-	<version>0.9.0</version>
+	<version>0.9.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
