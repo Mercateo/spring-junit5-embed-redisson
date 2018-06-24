@@ -45,3 +45,5 @@ The Extension will start a Spring Boot container and for every test that
 has a parameter of type ```RedissonClient```, an embedded Redis Server is
 started on a random port (and stopped after test execution) and the client passed to the test is
 configured accordingly.
+
+Example Project: [spring-junit5-embed-redisson-example](https://github.com/uweschaefer/spring-junit5-embed-redisson-example)
