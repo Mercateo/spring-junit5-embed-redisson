@@ -1,4 +1,4 @@
-A tiny wrapper for conveniently using embedded Redis Server with JUnit5 and Spring Boot.
+#### A tiny wrapper for conveniently using embedded Redis Server with JUnit5 and Spring Boot.
 
 Mainly this is an excuse to play with JUnit5's ParameterResolver interface. 
 
