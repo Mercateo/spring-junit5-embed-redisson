@@ -1,0 +1,12 @@
+.project
+.settings
+*~
+.classpath
+target
+
+.idea
+*.iml
+
+**/bin/*
+*.versionsBackup*
+test_local.sh
