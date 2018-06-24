@@ -15,9 +15,10 @@ First add
 	</dependency>
 ``` 
 		
-to your pom.xml and create a SpringBoot Redisson Test like this:
+to your pom.xml and create a SpringBootRedissonTest like this:
 
 ```
+	// look ma, no RunWith
 	@SpringBootRedissonTest // provides the extensions
 	public class RedissonTest {
 	
@@ -40,7 +41,7 @@ to your pom.xml and create a SpringBoot Redisson Test like this:
 ``` 
 
 
-The Extionsion will start a Spring Boot container and for every test that
+The Extension will start a Spring Boot container and for every test that
 has a parameter of type ```RedissonClient```, an embedded Redis Server is
 started and stoped on a random port, and the client passed to the test is
 connected to it.
